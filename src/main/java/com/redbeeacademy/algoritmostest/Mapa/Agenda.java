@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 
 /*
-Empelando la clase HashMap<String,Integer>() de la biblioteca de java (una
+Empleando la clase HashMap<String,Integer>() de la biblioteca de java (una
 implementación de tablas hash con un string (nombre) de clave y un entero (telefono) de valor)
 
 1) crear un nuevo contacto
@@ -23,21 +23,24 @@ public class Agenda {
             new HashMap<>();
 
     public static void nuevoContacto(String nombre, int telefono){
-        //TODO -> implement me
+        miAgenda.put(nombre, telefono);
     }
 
     public static void modificarTelefono(String nombre, int telefono){
-        //TODO -> implement me
+        miAgenda.put(nombre, telefono);
     }
 
     public static Integer obtenerTelefono(String nombre){
-        //TODO -> implement me
-        return null;
+        return miAgenda.get( nombre );
     }
 
     public static boolean eliminarTelefono(String nombre){
-        //TODO -> implement me
-        return false;
+       boolean existe = false;
+        if ( miAgenda.containsKey( nombre )) {
+            miAgenda.remove( nombre );
+            existe = true;
+        }
+        return existe;
     }
 
     protected static List<Integer> miAgenda(){
